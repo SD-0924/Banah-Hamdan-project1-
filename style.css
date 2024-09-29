@@ -62,7 +62,7 @@ header {
     margin-right: 8px;
 }
 
-.right-triangle-green {
+.right-triangle {
   position: relative; 
   width: 100vw;
   height: 75px;
@@ -71,7 +71,7 @@ header {
   z-index: 1;
 }
 
-.left-triangle-blue {
+.left-triangle {
   position: relative; 
   width: 100vw;
   height: 75px;
