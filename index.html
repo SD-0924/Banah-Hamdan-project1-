@@ -10,10 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
 </head>  
 <body>
-   <header>
+   <header class="header">
       <div class="header-content">
           <h3 class="h1-content">Web Topics</h3>
-          <div class="icon-buttons">
+          <div class="icon-buttons"> 
               <div class="icon-label"><i class="fa-regular fa-moon"></i> Dark Mode</div>
               <div class="icon-label"><i class="fa-regular fa-heart"></i> Favourites</div>
           </div>
@@ -22,7 +22,7 @@
       <div class="right-triangle"></div>
       <div class="left-triangle"></div>
    
-      <div class="bottom-nav">
+      <div class="bottom-nav"> 
         <div class="welcome-banner">
             <h1 class="welcome-banner-firstLine">Welcome to our website!</h1>
             <p class="welcome-banner-secondLine">We have a new design that's fresh, modern, and easy to use.</p>
@@ -52,19 +52,23 @@
         <h3 class="web-topics">"24" Web Topics Found</h3>
         <div class="topics-grid">
 
-            <div class="topic-card">
+          <a href="details-page.html" class="topic-card">
+            <div>
                 <img src="images/HTML.png" alt="HTML">
                 <h4>Web Development Languages HTML</h4>
                 <p>Author: Sarah Smith</p>
                 <span class="rating">★★★★☆</span>
             </div>
+          </a>
 
-            <div class="topic-card">
+          <a href="details-page.html" class="topic-card">
+            <div>
                 <img src="images/CSS.png" alt="CSS">
                 <h4>Web Development Languages CSS</h4>
                 <p>Author: David Lee</p>
                 <span class="rating">★★★★☆</span>
             </div>
+          </a>
 
             <div class="topic-card">
                 <img src="images/JS.png" alt="JavaScript">
@@ -82,3 +86,6 @@
   </footer>
 </body>
 </html>
+
+
+<!-- CSS BEM -->
