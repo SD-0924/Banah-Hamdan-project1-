@@ -14,8 +14,8 @@
       <div class="header-content">
           <h3 class="h1-content">Web Topics</h3>
           <div class="icon-buttons"> 
-              <div class="icon-label"><i class="fa-regular fa-moon"></i> Dark Mode</div>
-              <div class="icon-label"><i class="fa-regular fa-heart"></i> Favourites</div>
+            <div class="icon-label" id="darkModeToggle"><i class="fa-regular fa-moon"></i> Dark Mode</div>
+            <div class="icon-label"><i class="fa-regular fa-heart"></i> Favourites</div>
           </div>
       </div>      
       
@@ -75,5 +75,22 @@
 <footer class="footer">
   <p class="footer-content">Developed with <i class="fa-solid fa-heart" style="color: #db143c;"></i><i class="fa-regular fa-copyright"></i> 2023</p>
 </footer>
+
+<script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+    }
+    darkModeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        if (document.body.classList.contains('dark-mode')) {
+            localStorage.setItem('darkMode', 'enabled');
+        } else {
+            localStorage.setItem('darkMode', 'disabled');
+        }
+    });
+</script>
+
+
 </body>
 </html>

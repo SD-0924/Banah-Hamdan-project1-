@@ -7,6 +7,16 @@
     --body-text: #333333;
 }
 
+.dark-mode {
+    --brand-primary: #0768AC;
+    --brand-secondary: #03C180;
+    --bg_default: #1A1A1A;
+    --bg_body: #282828;
+    --lines-color: #000000;
+    --body-text: #EDEDED;
+}
+
+
 *{
   margin: 0px;
   padding: 0px;
