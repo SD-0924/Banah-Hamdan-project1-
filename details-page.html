@@ -19,8 +19,8 @@
         <div class="header-content">
             <h3 class="h1-content">Web Topics</h3>
             <div class="icon-buttons">
-                <div class="icon-label" id="darkModeToggle"><i class="fa-regular fa-moon"></i> Dark Mode</div>
-                <div class="icon-label"><i class="fa-regular fa-heart"></i> Favourites</div>
+                <button class="icon-label" id="darkModeToggle"><i class="fa-regular fa-moon"></i> Dark Mode</button>
+                <button class="icon-label"><i class="fa-regular fa-heart"></i> Favourites</button>
             </div>
         </div>
 
@@ -62,13 +62,13 @@
         </div>
     </main>
 
-        <div class="sub-topics">
-            <h3>HTML Sub Topics</h3>
-            <ul class="sub-topics-list">
+    <div class="sub-topics">
+        <h3>HTML Sub Topics</h3>
+        <ul class="sub-topics-list">
 
-            </ul>
-        </div>
-    
+        </ul>
+    </div>
+
     <footer class="footer">
         <p class="footer-content">Developed with <i class="fa-solid fa-heart" style="color: #db143c;"></i><i
                 class="fa-regular fa-copyright"></i> 2023</p>
@@ -160,6 +160,34 @@
             }
             return stars;
         }
+
+
+        
+        document.addEventListener('DOMContentLoaded', function () {
+            const favouriteButton = document.querySelector('.card-button');
+            const favouriteIcon = favouriteButton.querySelector('i');
+
+            let isFavourite = localStorage.getItem(`${course.shortTitle}-favourite`) === 'true';
+
+            function updateFavouriteButton() {
+                if (isFavourite) {
+                    favouriteButton.innerHTML = 'Add to Favourites <i class="fa-solid fa-heart" style="color: #db143c;"></i>';
+                } else {
+                    favouriteButton.innerHTML = 'Add to Favourites <i class="fa-regular fa-heart"></i>';
+                }
+            }
+
+            updateFavouriteButton();
+
+            favouriteButton.addEventListener('click', function () {
+                isFavourite = !isFavourite;
+
+                localStorage.setItem(`${course.shortTitle}-favourite`, isFavourite);
+
+                updateFavouriteButton();
+            });
+        });
+
     </script>
 
     <script src="JS/dark-mode.js"></script>

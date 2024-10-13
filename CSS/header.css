@@ -55,6 +55,9 @@
     border-radius: 5px;
     padding: 8px 12px;
     margin: 3px;
+    background-color: var(--bg_default);
+    color: var(--body-text);
+    border-color: var(--body-text);
 }
 
 .icon-label i {

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,31 +53,6 @@
         <h3 class="web-topics">"24" Web Topics Found</h3>
         <div class="topics-grid">
 
-          <!-- <a href="details-page.html" class="topic-card">
-            <div>
-                <img src="images/HTML.png" alt="HTML">
-                <h4>Web Development Languages HTML</h4>
-                <p>Author: Sarah Smith</p>
-                <span class="rating">★★★★☆</span>
-            </div>
-          </a>
-
-          <a href="details-page.html" class="topic-card">
-            <div>
-                <img src="images/CSS.png" alt="CSS">
-                <h4>Web Development Languages CSS</h4>
-                <p>Author: David Lee</p>
-                <span class="rating">★★★★☆</span>
-            </div>
-          </a>
-
-            <div class="topic-card">
-                <img src="images/JS.png" alt="JavaScript">
-                <h4>Web Development Languages JavaScript</h4>
-                <p>Author: Emily Chen</p>
-                <span class="rating">★★★★★</span>
-            </div> -->
-
         </div>
 
     </main>
@@ -89,6 +64,137 @@
   <script src="JS/dark-mode.js"></script>
 </body>
 </html>
+ -->
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+        rel="stylesheet">
+</head>
 
-<!-- CSS BEM -->
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h3 class="h1-content">Web Topics</h3>
+            <div class="icon-buttons">
+                <button class="icon-label" id="darkModeToggle"><i class="fa-regular fa-moon"></i> Dark Mode</button>
+                <button class="icon-label" id="favouritesToggle"><i class="fa-regular fa-heart"></i> Favourites</button>
+            </div>
+        </div>
+
+        <div class="right-triangle"></div>
+        <div class="left-triangle"></div>
+
+        <div class="bottom-nav">
+            <div class="welcome-banner">
+                <h1 class="welcome-banner-firstLine">Welcome to our website!</h1>
+                <p class="welcome-banner-secondLine">We have a new design that's fresh, modern, and easy to use.</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="search-section">
+            <div class="search-section-input"><i class="fa-solid fa-magnifying-glass"></i><input type="text"
+                    placeholder="Search the website..."></div>
+            <div class="filter-sort">
+                <div class="sort-box">
+                    <span>Sort by:</span>
+                    <select>
+                        <option>Default</option>
+                    </select>
+                </div>
+                <div class="filter-box">
+                    <span>Filter by:</span>
+                    <select>
+                        <option>Default</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="web-topics">"24" Web Topics Found</h3>
+        <div class="topics-grid"></div>
+
+        <!-- Favorites Section (initially hidden) -->
+        <div id="favouritesSection" class="hidden">
+            <h3>My Favourite Topics</h3>
+            <div id="favouritesList"></div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p class="footer-content">Developed with <i class="fa-solid fa-heart" style="color: #db143c;"></i><i
+                class="fa-regular fa-copyright"></i> 2023</p>
+    </footer>
+
+    <script src="JS/cards.js"></script>
+    <script src="JS/dark-mode.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const favouritesToggle = document.getElementById('favouritesToggle');
+            const favouritesSection = document.getElementById('favouritesSection'); 
+            const favouritesList = document.getElementById('favouritesList'); 
+            let favouriteCourses = JSON.parse(localStorage.getItem('favouriteCourses')) || []; 
+
+            function updateFavouritesList() {
+                favouritesList.innerHTML = ''; 
+                if (favouriteCourses.length === 0) {
+                    favouritesList.innerHTML = '<p>No favourite topics yet.</p>';
+                } else {
+                    favouriteCourses.forEach(course => {
+                        const courseCard = document.createElement('div');
+                        courseCard.classList.add('favourite-card');
+                        courseCard.innerHTML = `
+                    <img src="${course.image}" alt="${course.shortTitle}" style="width: 100px;">
+                    <p>${course.shortTitle}</p>
+                    <p>${course.author}</p>
+                `;
+                        favouritesList.appendChild(courseCard);
+                    });
+                }
+            }
+
+            favouritesToggle.addEventListener('click', function () {
+                favouritesSection.classList.toggle('hidden'); 
+                updateFavouritesList(); 
+            });
+
+            function addToFavourites(course) {
+                if (!favouriteCourses.some(fav => fav.shortTitle === course.shortTitle)) {
+                    favouriteCourses.push(course);
+                    localStorage.setItem('favouriteCourses', JSON.stringify(favouriteCourses)); // Store updated favourites
+                    alert(`${course.shortTitle} added to favourites!`);
+                }
+            }
+
+            document.querySelectorAll('.card-button').forEach(button => {
+                button.addEventListener('click', function () {
+                    const courseElement = this.closest('.card'); 
+                    const courseData = {
+                        image: courseElement.querySelector('img').src,
+                        shortTitle: courseElement.querySelector('#course-name').innerText,
+                        author: courseElement.querySelector('#course-author').innerText
+                    };
+                    addToFavourites(courseData); 
+                });
+            });
+
+            updateFavouritesList();
+        });
+
+    </script>
+    <script src="JS/cards.js"></script>
+    <script src="JS/dark-mode.js"></script>
+</body>
+
+</html>
