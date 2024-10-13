@@ -41,7 +41,7 @@ main{
 .main-content {
     position: relative;
     display: flex;
-    /* flex-direction: row; */
+    flex-direction: row;
     justify-content: flex-start;
     padding: 20px;
 }
@@ -127,7 +127,7 @@ main{
     /* position: absolute; */
     /* left: 60%;
     top: 8%; */
-    margin-left: 70%;
+    /* margin-left: 70%; */
     margin-bottom: -150px;
     width: 290px;
     /* height: auto; */
