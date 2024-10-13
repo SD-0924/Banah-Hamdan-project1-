@@ -34,7 +34,7 @@ body {
     margin: 0px;
 }
 
-.header {
+/* .header {
     padding-bottom: 10px;
     padding-top: 10px;
     background-color: var(--bg_default);
@@ -93,7 +93,6 @@ body {
 .bottom-nav {
     display: flex;
     justify-content: center;
-    /* margin-bottom: 10px; */
 }
 .welcome-banner {
     margin-bottom: 10px;
@@ -104,7 +103,7 @@ body {
 }
 .welcome-banner-secondLine{
     color: var(--body-text);
-}
+} */
 
 .search-section {
     display: flex;

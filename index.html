@@ -3,7 +3,8 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,7 +53,7 @@
         <h3 class="web-topics">"24" Web Topics Found</h3>
         <div class="topics-grid">
 
-          <a href="details-page.html" class="topic-card">
+          <!-- <a href="details-page.html" class="topic-card">
             <div>
                 <img src="images/HTML.png" alt="HTML">
                 <h4>Web Development Languages HTML</h4>
@@ -75,7 +76,7 @@
                 <h4>Web Development Languages JavaScript</h4>
                 <p>Author: Emily Chen</p>
                 <span class="rating">★★★★★</span>
-            </div>
+            </div> -->
 
         </div>
 
@@ -84,24 +85,8 @@
     <footer class="footer">
       <p class="footer-content">Developed with <i class="fa-solid fa-heart" style="color: #db143c;"></i><i class="fa-regular fa-copyright"></i> 2023</p>
   </footer>
-
-  <script>
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    if (localStorage.getItem('darkMode') === 'enabled') {
-        document.body.classList.add('dark-mode');
-    }
-    darkModeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        if (document.body.classList.contains('dark-mode')) {
-            localStorage.setItem('darkMode', 'enabled');
-        } else {
-            localStorage.setItem('darkMode', 'disabled');
-        }
-    });
-</script>
-
-
-
+  <script src="JS/cards.js"></script>
+  <script src="JS/dark-mode.js"></script>
 </body>
 </html>
 
