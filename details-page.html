@@ -1,59 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Details</title>
+    <title>Home Page</title>
     <link rel="stylesheet" href="CSS/details-page-style.css">
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
-        rel="stylesheet">
-</head>
-
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+</head>  
 <body>
-    <header class="header">
-        <div class="header-content">
-            <h3 class="h1-content">Web Topics</h3>
-            <div class="icon-buttons">
-                <button class="icon-label" id="darkModeToggle"><i class="fa-regular fa-moon"></i> Dark Mode</button>
-                <button class="icon-label"><i class="fa-regular fa-heart"></i> Favourites</button>
-            </div>
+   <header class="header">
+      <div class="header-content">
+          <h3 class="h1-content">Web Topics</h3>
+          <div class="icon-buttons"> 
+              <button class="icon-label" id="darkModeToggle"><i class="fa-regular fa-moon"></i> Dark Mode</button>
+              <button class="icon-label"><i class="fa-regular fa-heart"></i> Favourites</button>
+          </div>
+      </div>      
+      
+      <div class="right-triangle"></div>
+      <div class="left-triangle"></div>
+   
+      <div class="bottom-nav"> 
+        <div class="welcome-banner">
+            <h1 class="welcome-banner-firstLine">Welcome to our website!</h1>
+            <p class="welcome-banner-secondLine">We have a new design that's fresh, modern, and easy to use.</p>
         </div>
+    </div>
 
-        <div class="right-triangle"></div>
-        <div class="left-triangle"></div>
-
-        <div class="bottom-nav">
-            <div class="welcome-banner">
-                <h1 class="welcome-banner-firstLine">Welcome to our website!</h1>
-                <p class="welcome-banner-secondLine">We have a new design that's fresh, modern, and easy to use.</p>
-            </div>
-        </div>
-    </header>
+   </header>
 
     <main class="main-content">
-        <div class="top-section-left">
-            <h4 class="first-line-top" id="course-category">Web Development Languages</h4>
-            <h1 class="second-line-top" id="course-title">HTML</h1>
-            <span class="rating" id="course-rating">★★★★☆</span>
-            <p class="paragraph-top" id="course-description">
-                HTML (Hypertext Markup Language) is the standard markup language for creating web pages and other
-                information that can be displayed in a web browser. It provides a structure for content and defines how
-                it should be displayed on a web page, including text, images, and multimedia. HTML is essential for
-                creating static web pages and is a foundational technology for the World Wide Web.
+        <div class="top-section">
+            <h4 class="first-line-top"></h4>
+            <h1 class="second-line-top"></h4>
+            <span class="rating"></span>
+            <p class="paraghraph-top"><br>
             </p>
         </div>
+        
+        <div class="sub-topics">
+            <h3 class="sub-topics-label">HTML Sub Topics</h3>
+            <ul class="sub-topics-list">
+                <li><i class="far fa-check-circle"></i>HTML syntax and structure</li>
+                <li><i class="far fa-check-circle"></i> HTML elements and attributes</li>
+                <li><i class="far fa-check-circle"></i> HTML forms and input elements</li>
+                <li><i class="far fa-check-circle"></i>HTML tables and lists</li>
+                <li><i class="far fa-check-circle"></i> HTML multimedia elements (audio, video, images)</li>
+                <li><i class="far fa-check-circle"></i> HTML accessibility and semantic markup</li>
+            </ul>
+        </div>        
+
         <div class="card">
-            <img src="images/HTML.png" alt="HTML" id="course-image">
+            <img src="images/HTML.png" alt="HTML" class="image-course">
             <div class="card-header">
-                <p id="course-name">HTML</p> by&nbsp;<u id="course-author">Sarah Smith</u>
+                <p class="course-name-card">HTML</p>&nbsp;&nbsp;by&nbsp;&nbsp;<u class="course-author">Sarah Smith</u>
             </div>
             <div class="rectangle-card">
-                <p>Interested in this topic?</p>
+                <p>Interested about this topic?</p>
                 <button class="card-button">
                     Add to Favourites <i class="fa-regular fa-heart"></i>
                 </button>
@@ -62,135 +68,134 @@
         </div>
     </main>
 
-    <div class="sub-topics">
-        <h3>HTML Sub Topics</h3>
-        <ul class="sub-topics-list">
+<footer class="footer">
+  <p class="footer-content">Developed with <i class="fa-solid fa-heart" style="color: #db143c;"></i><i class="fa-regular fa-copyright"></i> 2023</p>
+</footer>
 
-        </ul>
-    </div>
-
-    <footer class="footer">
-        <p class="footer-content">Developed with <i class="fa-solid fa-heart" style="color: #db143c;"></i><i
-                class="fa-regular fa-copyright"></i> 2023</p>
-    </footer>
-
-
-    <script>
-        const courses = [
-            {
-                image: "images/HTML.png",
-                title: "Web Development Languages HTML",
-                shortTitle: "HTML",
-                author: "Sarah Smith",
-                rating: 4,
-                description: "HTML (Hypertext Markup Language) is the standard markup language for creating web pages and other information that can be displayed in a web browser. It provides a structure for content and defines how it should be displayed on a web page, including text, images, and multimedia. HTML is essential for creating static web pages and is a foundational technology for the World Wide Web.",
-                subTopics: [
-                    "HTML syntax and structure",
-                    "HTML elements and attributes",
-                    "HTML forms and input elements",
-                    "HTML tables and lists",
-                    "HTML multimedia elements (audio, video, images)",
-                    "HTML accessibility and semantic markup"
-                ]
-            },
-            {
-                image: "images/CSS.png",
-                title: "Web Development Languages CSS",
-                shortTitle: "CSS",
-                author: "David Lee",
-                rating: 4,
-                description: "CSS (Cascading Style Sheets) is a style sheet language used to describe...",
-                subTopics: [
-                    "CSS syntax and structure",
-                    "CSS selectors and properties",
-                    "CSS box model",
-                    "CSS layout techniques",
-                    "Responsive design with CSS",
-                    "CSS animations and transitions"
-                ]
-            },
-            {
-                image: "images/JS.png",
-                title: "Web Development Languages JavaScript",
-                shortTitle: "JavaScript",
-                author: "Emily Chen",
-                rating: 5,
-                description: "JavaScript is a programming language that allows you to implement complex...",
-                subTopics: [
-                    "JavaScript syntax and structure",
-                    "Variables, data types, and operators",
-                    "JavaScript functions and events",
-                    "DOM manipulation",
-                    "AJAX and asynchronous programming",
-                    "JavaScript frameworks and libraries"
-                ]
-            }
-        ];
-
-        const urlParams = new URLSearchParams(window.location.search);
-        const courseTitle = urlParams.get('title');
-
-        const course = courses.find(c => c.title === decodeURIComponent(courseTitle));
-
-        if (course) {
-            document.getElementById('course-title').innerText = course.shortTitle;
-            document.getElementById('course-author').innerText = course.author;
-            document.getElementById('course-rating').innerHTML = generateRating(course.rating);
-            document.getElementById('course-description').innerText = course.description;
-            document.getElementById('course-image').src = course.image;
-            document.getElementById('course-name').innerText = course.shortTitle;
-
-            document.title = course.title;
-
-            const subTopicsList = document.querySelector('.sub-topics-list');
-            subTopicsList.innerHTML = '';
-            course.subTopics.forEach(subTopic => {
-                const li = document.createElement('li');
-                li.innerHTML = `<i class="far fa-check-circle"></i>${subTopic}`;
-                subTopicsList.appendChild(li);
-            });
-        } else {
-            document.querySelector('.main-content').innerHTML = "<h1>Course not found</h1>";
+<script>
+    const courses = [
+        {
+            image: "images/HTML.png",
+            title: "Web Development Languages HTML",
+            shortTitle: "HTML",
+            author: "Sarah Smith",
+            rating: 4,
+            description: "HTML (Hypertext Markup Language) is the standard markup language for creating web pages and other information that can be displayed in a web browser. It provides a structure for content and defines how it should be displayed on a web page, including text, images, and multimedia. HTML is essential for creating static web pages and is a foundational technology for the World Wide Web.",
+            label: "HTML Sub Topics",
+            subTopics: [
+                "HTML syntax and structure",
+                "HTML elements and attributes",
+                "HTML forms and input elements",
+                "HTML tables and lists",
+                "HTML multimedia elements (audio, video, images)",
+                "HTML accessibility and semantic markup"
+            ]
+        },
+        {
+            image: "images/CSS.png",
+            title: "Web Development Languages CSS",
+            shortTitle: "CSS",
+            author: "David Lee",
+            rating: 4,
+            description: "CSS (Cascading Style Sheets) is a style sheet language used for describing the presentation of a document written in HTML or XML, including colors, layout, fonts, and animations. It separates the presentation from the content and structure of a web page, allowing for greater flexibility and control over the design of a website.",
+            label: "CSS Sub Topics",
+            subTopics: [
+                "CSS selectors and specificity",
+                "CSS box model and layout",
+                "CSS typography and fonts",
+                "CSS color and background properties",
+                "CSS transitions and animations",
+                "CSS responsive design and media queries"
+            ]
+        },
+        {
+            image: "images/JS.png",
+            title: "Web Development Languages JavaScript",
+            shortTitle: "JavaScript",
+            author: "Emily Chen",
+            rating: 5,
+            description: "JavaScript is a high-level programming language that is used to create interactive web pages and dynamic user interfaces. It allows for the creation of complex, responsive web applications that can run both on the client side (in the web browser) and the server side (using Node.js). JavaScript is one of the most widely-used programming languages in web development.",
+            label: "JavaScript Sub Topics",
+            subTopics: [
+                "JavaScript data types and variables",
+                "JavaScript functions and control flow",
+                "JavaScript objects and classes",
+                "JavaScript DOM manipulation and events",
+                "JavaScript asynchronous programming and callbacks",
+                "JavaScript frameworks and libraries (React, Angular, Vue)"
+            ]
         }
+    ];
 
-        function generateRating(rating) {
-            let stars = '';
-            for (let i = 0; i < 5; i++) {
-                stars += i < rating ? '★' : '☆';
-            }
-            return stars;
-        }
+    const urlParams = new URLSearchParams(window.location.search);
+    const courseTitle = urlParams.get('title');
 
+    const course = courses.find(c => c.title === decodeURIComponent(courseTitle));
+
+    if (course) {
+        document.getElementsByClassName('second-line-top')[0].innerText = course.shortTitle;
+        document.getElementsByClassName('card-header')[0].innerText = course.author;
+        document.getElementsByClassName('rating')[0].innerHTML = generateRating(course.rating);
+        document.getElementsByClassName('paraghraph-top')[0].innerHTML = course.description;
+        document.getElementsByClassName('image-course')[0].src = course.image;
+        document.getElementsByClassName('sub-topics-label')[0].innerText = course.label;
+        document.getElementsByClassName('course-name-card').innerText = course.shortTitle;
+
+        console.log( "reached" , document.getElementsByClassName('course-name-cards'));
 
         
-        document.addEventListener('DOMContentLoaded', function () {
-            const favouriteButton = document.querySelector('.card-button');
-            const favouriteIcon = favouriteButton.querySelector('i');
 
-            let isFavourite = localStorage.getItem(`${course.shortTitle}-favourite`) === 'true';
+        document.title = course.title;
 
-            function updateFavouriteButton() {
-                if (isFavourite) {
-                    favouriteButton.innerHTML = 'Add to Favourites <i class="fa-solid fa-heart" style="color: #db143c;"></i>';
-                } else {
-                    favouriteButton.innerHTML = 'Add to Favourites <i class="fa-regular fa-heart"></i>';
-                }
+        const subTopicsList = document.querySelector('.sub-topics-list');
+        subTopicsList.innerHTML = '';
+        course.subTopics.forEach(subTopic => {
+            const li = document.createElement('li');
+            li.innerHTML = `<i class="far fa-check-circle"></i>${subTopic}`;
+            subTopicsList.appendChild(li);
+        });
+    } else {
+        document.querySelector('.main-content').innerHTML = "<h1>Course not found</h1>";
+    }
+
+    function generateRating(rating) {
+        let stars = '';
+        for (let i = 0; i < 5; i++) {
+            stars += i < rating ? '★' : '☆';
+        }
+        return stars;
+    }
+
+
+    
+    document.addEventListener('DOMContentLoaded', function () {
+        const favouriteButton = document.querySelector('.card-button');
+        const favouriteIcon = favouriteButton.querySelector('i');
+
+        let isFavourite = localStorage.getItem(`${course.shortTitle}-favourite`) === 'true';
+
+        function updateFavouriteButton() {
+            if (isFavourite) {
+                favouriteButton.innerHTML = 'Add to Favourites <i class="fa-solid fa-heart" style="color: #db143c;"></i>';
+            } else {
+                favouriteButton.innerHTML = 'Add to Favourites <i class="fa-regular fa-heart"></i>';
             }
+        }
+
+        updateFavouriteButton();
+
+        favouriteButton.addEventListener('click', function () {
+            isFavourite = !isFavourite;
+
+            localStorage.setItem(`${course.shortTitle}-favourite`, isFavourite);
 
             updateFavouriteButton();
-
-            favouriteButton.addEventListener('click', function () {
-                isFavourite = !isFavourite;
-
-                localStorage.setItem(`${course.shortTitle}-favourite`, isFavourite);
-
-                updateFavouriteButton();
-            });
         });
+    });
 
-    </script>
+</script>
 
-    <script src="JS/dark-mode.js"></script>
+<script src="JS/dark-mode.js"></script>
+
 </body>
-
 </html>
