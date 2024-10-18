@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head> 
+<head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/header.css">
+    <link rel="stylesheet" href="CSS/favorites.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,10 +60,20 @@
         <div class="topics-grid"></div>
 
         <!-- Favorites -->
-        <div id="favouritesSection" class="hidden">
-            <h3>My Favourite Topics</h3>
-            <div id="favouritesList"></div>
+        <div id="favouritesSection" class="favourites-section hidden">
+            <h4>My Favourite Topics</h4>
+            <div class="favourites-list" id="favouritesList">
+                <div class="favourite-card">
+                    <img src="images/accessibility.png" alt="accessibility">
+                    <div class="card-text">
+                        <p class="course-name">accessibility</p>
+                        <p class="course-rating">rating</p>
+                    </div>
+                </div>
+            </div>
         </div>
+
+
     </main>
 
     <footer class="footer">
@@ -70,60 +81,8 @@
                 class="fa-regular fa-copyright"></i> 2023</p>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const favouritesToggle = document.getElementById('favouritesToggle');
-            const favouritesSection = document.getElementById('favouritesSection'); 
-            const favouritesList = document.getElementById('favouritesList'); 
-            let favouriteCourses = JSON.parse(localStorage.getItem('favouriteCourses')) || []; 
-
-            function updateFavouritesList() {
-                favouritesList.innerHTML = ''; 
-                if (favouriteCourses.length === 0) {
-                    favouritesList.innerHTML = '<p>No favourite topics yet.</p>';
-                } else {
-                    favouriteCourses.forEach(course => {
-                        const courseCard = document.createElement('div');
-                        courseCard.classList.add('favourite-card');
-                        courseCard.innerHTML = `
-                    <img src="${course.image}" alt="${course.shortTitle}" style="width: 100px;">
-                    <p>${course.shortTitle}</p>
-                    <p>${course.author}</p>
-                `;
-                        favouritesList.appendChild(courseCard);
-                    });
-                }
-            }
-
-            favouritesToggle.addEventListener('click', function () {
-                favouritesSection.classList.toggle('hidden'); 
-                updateFavouritesList(); 
-            });
-
-            function addToFavourites(course) {
-                if (!favouriteCourses.some(fav => fav.shortTitle === course.shortTitle)) {
-                    favouriteCourses.push(course);
-                    localStorage.setItem('favouriteCourses', JSON.stringify(favouriteCourses)); // Store updated favourites
-                    alert(`${course.shortTitle} added to favourites!`);
-                }
-            }
-
-            document.querySelectorAll('.card-button').forEach(button => {
-                button.addEventListener('click', function () {
-                    const courseElement = this.closest('.card'); 
-                    const courseData = {
-                        image: courseElement.querySelector('img').src,
-                        shortTitle: courseElement.querySelector('#course-name').innerText,
-                        author: courseElement.querySelector('#course-author').innerText
-                    };
-                    addToFavourites(courseData); 
-                });
-            });
-
-            updateFavouritesList();
-        });
-
-    </script>
+    <script src="JS/favourites.js"></script>
+    <script src="JS/details.js"></script>
     <script src="JS/cards.js"></script>
     <script src="JS/dark-mode.js"></script>
 </body>

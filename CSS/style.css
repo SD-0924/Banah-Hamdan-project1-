@@ -225,49 +225,6 @@ body {
     padding-left: 15px;
 }
 
- 
-.hidden {
-    display: none;
-}
-
-.favourites-section {
-    background-color: #f4f4f4;
-    padding: 20px;
-    border-top: 1px solid #ccc;
-}
-
-.favourites-list {
-    display: flex;
-    gap: 10px;
-    overflow-x: auto;
-}
-
-.favourite-card {
-    border: 1px solid #ccc;
-    padding: 10px;
-    background-color: #fff;
-    width: 150px;
-    text-align: center;
-}
-
-
-/* .footer {
-  display: flex;
-  justify-content: center;
-  background-color: var(--background-color);
-  align-items: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.footer-content{
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  color: var(--body-text);
-  font-weight: 300;
-} */
-
 .footer {
     display: flex;
     justify-content: center;

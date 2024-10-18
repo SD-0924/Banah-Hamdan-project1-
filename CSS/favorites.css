@@ -1,0 +1,71 @@
+.favourites-section {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--bg_default);
+    border-top: 1px solid var(--lines-color);
+    padding-right: 20px;
+    padding-left: 40px;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    z-index: 999;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: right;
+    flex-direction: column;
+    align-items: right;
+}
+
+/* .favourites-title {
+    margin-right: 20px;
+    font-weight: bold;
+    color: var(--brand-primary);
+} */
+
+.favourites-list {
+    display: flex;
+    gap: 10px;
+}
+
+.favourite-card {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    align-content: right;
+    background-color: var(--bg_default);
+    /* padding: 10px; */
+    border-radius: 8px;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+    /* width: 80px; */
+}
+
+.card-text{
+    padding-left: 8px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.favourite-card img {
+    width: 120px;
+    height: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.course-name {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--body-text);
+}
+.course-rating {
+    margin: 0;
+    font-size: 14px;
+    color: var(--body-text);
+}
+
+.hidden {
+    display: none;
+}

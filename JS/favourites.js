@@ -1,57 +1,55 @@
-// document.addEventListener('DOMContentLoaded', function () {
-//     const favouritesToggle = document.querySelector('.icon-label i.fa-heart');
-//     const favouritesSection = document.getElementById('favouritesSection');
-//     const favouritesList = document.getElementById('favouritesList');
-//     let favouriteCourses = JSON.parse(localStorage.getItem('favouriteCourses')) || [];
+document.addEventListener('DOMContentLoaded', function () {
+    const favouritesToggle = document.getElementById('favouritesToggle');
+    const favouritesSection = document.getElementById('favouritesSection');
+    const favouritesList = document.getElementById('favouritesList');
 
-//     // Function to update the favourites list
-//     function updateFavouritesList() {
-//         favouritesList.innerHTML = ''; // Clear previous content
-//         if (favouriteCourses.length === 0) {
-//             favouritesList.innerHTML = '<p>No favourite topics yet.</p>';
-//         } else {
-//             favouriteCourses.forEach(course => {
-//                 const courseCard = document.createElement('div');
-//                 courseCard.classList.add('favourite-card');
-//                 courseCard.innerHTML = `
-//                     <img src="${course.image}" alt="${course.shortTitle}" style="width: 100px;">
-//                     <p>${course.shortTitle}</p>
-//                     <p>${course.author}</p>
-//                 `;
-//                 favouritesList.appendChild(courseCard);
-//             });
-//         }
-//     }
+    async function fetchCourses() {
+        try {
+            const response = await fetch('data.json'); 
+            const courses = await response.json();
 
-//     // Toggle the favourites section visibility
-//     favouritesToggle.addEventListener('click', function () {
-//         favouritesSection.classList.toggle('hidden'); // Toggle visibility
-//         updateFavouritesList(); // Update the favourites list
-//     });
+            const favouriteCourses = courses.filter(course => {
+                return localStorage.getItem(`${course.topic}-favourite`) === 'true';
+            });
 
-//     // Function to add a course to favourites
-//     function addToFavourites(course) {
-//         // Check if course is already in favourites
-//         if (!favouriteCourses.some(fav => fav.shortTitle === course.shortTitle)) {
-//             favouriteCourses.push(course);
-//             localStorage.setItem('favouriteCourses', JSON.stringify(favouriteCourses));
-//         }
-//     }
+            updateFavouritesList(favouriteCourses); 
+        } catch (error) {
+            console.error('Error fetching courses:', error);
+        }
+    }
 
-//     // Example: This should be triggered when a course is added to favourites from another page
-//     // You should replace this with the actual course data when a course is clicked
-//     document.querySelectorAll('.card-button').forEach(button => {
-//         button.addEventListener('click', function () {
-//             const courseElement = this.closest('.card');
-//             const courseData = {
-//                 image: courseElement.querySelector('img').src,
-//                 shortTitle: courseElement.querySelector('#course-name').innerText,
-//                 author: courseElement.querySelector('#course-author').innerText
-//             };
-//             addToFavourites(courseData); // Add selected course to favourites
-//         });
-//     });
+    function updateFavouritesList(favouriteCourses) {
+        favouritesList.innerHTML = ''; 
+        if (favouriteCourses.length === 0) {
+            favouritesList.innerHTML = '<p>No favourite topics yet.</p>';
+        } else {
+            favouriteCourses.forEach(course => {
+                const courseCard = document.createElement('div');
+                courseCard.classList.add('favourite-card');
+                courseCard.innerHTML = `
+                <img src="${course.image}" alt="${course.topic}" style="width: 100px;">
+                <div class="card-text">
+                    <p class="course-name">${course.topic}</p>
+                    <p class="course-rating">${generateRating(course.rating)}</p>
+                </div>
+            `;
+                favouritesList.appendChild(courseCard);
+            });
+        }
+    }
 
-//     // Initial load of favourites when page loads
-//     updateFavouritesList();
-// });
+    favouritesToggle.addEventListener('click', function () {
+        favouritesSection.classList.toggle('hidden');
+        fetchCourses();
+    });
+
+    fetchCourses();
+});
+
+function generateRating(rating) {
+    let stars = '';
+    for (let i = 0; i < 5; i++) {
+        stars += i < rating ? '★' : '☆';
+    }
+    return stars;
+}

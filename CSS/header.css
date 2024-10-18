@@ -1,5 +1,3 @@
-
-
 :root {
     --brand-primary: #0768AC;
     --brand-secondary: #03C180;
@@ -7,6 +5,10 @@
     --bg_body: #F0F9FF;
     --lines-color: #DDDDDD;
     --body-text: #333333;
+}
+
+.right-triangle, .left-triangle {
+    width: 100%; /* Ensure it doesn't exceed the container width */
 }
 
 .dark-mode {
