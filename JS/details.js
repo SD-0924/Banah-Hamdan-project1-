@@ -114,7 +114,6 @@ function generateCourseDetail(course) {
     });
 }
 
-// Fetch and render courses on DOMContentLoaded
 document.addEventListener('DOMContentLoaded', function () {
     fetchCourses();
 });

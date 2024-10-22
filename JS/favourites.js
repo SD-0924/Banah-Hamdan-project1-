@@ -5,24 +5,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
     async function fetchCourses() {
         try {
-            const response = await fetch('data.json'); 
+            const response = await fetch('data.json');
             const courses = await response.json();
 
             const favouriteCourses = courses.filter(course => {
                 return localStorage.getItem(`${course.topic}-favourite`) === 'true';
             });
 
-            updateFavouritesList(favouriteCourses); 
-        } catch (error) {
+            updateFavouritesList(favouriteCourses);
+        }
+        catch (error) {
             console.error('Error fetching courses:', error);
         }
     }
 
     function updateFavouritesList(favouriteCourses) {
-        favouritesList.innerHTML = ''; 
+        favouritesList.innerHTML = '';
         if (favouriteCourses.length === 0) {
             favouritesList.innerHTML = '<p>No favourite topics yet.</p>';
-        } else {
+        }
+        else {
             favouriteCourses.forEach(course => {
                 const courseCard = document.createElement('div');
                 courseCard.classList.add('favourite-card');
