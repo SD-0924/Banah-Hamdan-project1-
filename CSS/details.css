@@ -4,7 +4,7 @@ main{
     flex-direction: column;
     position: relative;
     height: auto;
-    background-color: var(--bg_default);
+    background-color: var(--bg_body);
 }
 
 .main-content {
@@ -12,10 +12,13 @@ main{
     display: flex;
     justify-content: flex-start;
     /* padding: 20px; */
+    /* flex-direction: column;
+    align-items: center; */
 }
 .top-section {
     /* flex: 1; */
-    background-color: var(--body-text); 
+    background-color: #333333; 
+    color: white;
     height: auto;
     padding-left: 15%;
     padding-right: 15%;
@@ -27,7 +30,7 @@ main{
     color: var(--brand-secondary);
 }
 .second-line-top{
-    color: var(--bg_default );
+    color: white;
 }
 .rating{
     color: #ffcc00;
@@ -35,7 +38,7 @@ main{
 }
 .paraghraph-top{
     padding-top: 20px;
-    color: var(--bg_default );
+    color: white;
     max-width: 60%; /* Set a maximum width for the paragraph */
     line-height: 2; /* Improve readability */
     /* flex: 1; */
@@ -48,14 +51,17 @@ main{
     display: flex;
     align-items: center; 
 } */
-
+ 
 .sub-topics {
     margin:40px;
     background-color: var(--bg_default);
     margin-left: 15%;
     border: 1px solid var(--lines-color); 
+    color: var(--body-text);
     border-radius: 5px;
-    width: 35%; 
+    width: 30rem;
+    /* min-width: 10rem; */
+    /* max-width: 500px; */
 }
 
 .sub-topics h3 {
@@ -95,8 +101,8 @@ main{
     top: 8%;
     width: 290px;
     height: auto;
-    background-color: var(--bg_default);
-    border: 1px solid var(--lines-color);
+    background-color: #FFFFFF;
+    border: 1px solid #DDDDDD;
     z-index: 1;
     padding-bottom: 15px;
     display: flex;
@@ -133,7 +139,7 @@ main{
 
 .rectangle-card {
     width: 80%;
-    border: 1px solid var(--lines-color);
+    border: 1px solid #DDDDDD;
     padding: 15px; 
     padding-top: 25px;
     padding-bottom: 10px;
@@ -168,7 +174,7 @@ main{
 }
 .under-button{
     font-size: 50px;
-    color: var(--lines-color);
+    color: #DDDDDD;
     padding-top: 10px;
     align-self: center;
 }
@@ -176,7 +182,7 @@ main{
 .footer {
     display: flex;
     justify-content: center;
-    background-color: var(--bg_default);
+    background-color: var(--bg_body);
     align-items: center;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -197,10 +203,32 @@ main{
     .header-content {
         padding: 0 2%;
     }
+    .sub-topics {
+        width: 15rem;
+        padding: 10px;
+    }
+    .sub-topics-list {
+        padding: 10px; 
+    }
+    .main-content {
+        flex-direction: column;
+    }
+
+    .card {
+        position: relative; 
+        left: auto; 
+        top: auto;
+        width: 15rem; 
+        /* margin-left: 20px; */
+        margin: 15px auto; 
+    }
 }
 
 @media (min-width: 1440px) {
     .header-content {
         padding: 0 10%;
+    }
+    .sub-topics {
+        width: 40rem;
     }
 }

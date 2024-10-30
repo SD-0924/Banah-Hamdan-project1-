@@ -1,10 +1,10 @@
 async function fetchCourses() {
     try {
-        const response = await fetch('data.json');
+        const response = await fetch('../data.json');
         const courses = await response.json(); 
         const urlParams = new URLSearchParams(window.location.search);
         const courseTitle = urlParams.get('title');
-        // console.log(courseTitle);
+        console.log(courseTitle);
 
         if (courseTitle) {
             const course = courses.find(c => c.topic === decodeURIComponent(courseTitle));
@@ -41,7 +41,7 @@ function generateCards(courses) {
     courses.forEach(course => {
         const card = document.createElement('div');
         card.classList.add('course-card'); 
-
+ 
         card.innerHTML = `
         <div class="card">
             <img src="${course.image}" alt="${course.topic}" class="image-course">

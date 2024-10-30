@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     favouritesToggle.addEventListener('click', function () {
         favouritesSection.classList.toggle('hidden');
+        debugger
         fetchCourses();
     });
 

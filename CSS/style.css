@@ -6,6 +6,7 @@
     --lines-color: #DDDDDD;
     --body-text: #333333;
 }
+
 .dark-mode {
     --brand-primary: #0768AC;
     --brand-secondary: #03C180;
@@ -15,13 +16,13 @@
     --body-text: #EDEDED;
 }
 
-*{
-  margin: 0px;
-  padding: 0px;
-  font-family: 'Nunito Sans', sans-serif;
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
-main{
+main {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -113,24 +114,29 @@ body {
     background-color: var(--bg_default);
     padding: 5px 20px;
     border-radius: 8px;
-    width: 90%; 
+    width: 88%;
     margin: 20px auto;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
 }
 
-.search-section-input{
-  align-items: center;
+.search-section-input {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    min-width: 200px;
+    margin-right: 15px;
 }
 
 .search-section i {
-  padding-right: 0px;
+    padding-right: 10px;
 }
 
 .search-section input {
     border: none;
     outline: none;
-    width: 60%;
-    padding-top: 8px;    
+    width: 100%;
+    padding-top: 8px;
     padding-bottom: 8px;
     padding-left: 10px;
     padding-right: 25px;
@@ -141,17 +147,21 @@ body {
 .filter-sort {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
+    flex-wrap: wrap;
 }
 
-.sort-box, .filter-box {
-  padding-right: 5px;
-  padding-left: 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: left;   
-  /* gap: 10px;    */
-  border-left: 1px solid var(--lines-color);
+.sort-box,
+.filter-box {
+    padding-right: 5px;
+    padding-left: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* gap: 10px;    */
+    border-left: 1px solid var(--lines-color);
+    margin-left: 10px;
+    min-width: 120px;
 }
 
 .filter-sort span {
@@ -173,14 +183,14 @@ body {
     color: var(--body-text);
 }
 
-.web-topics{
+.web-topics {
     padding: 0 5%;
     padding-bottom: 1.5%;
 }
 
 .topics-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 5fr));
     gap: 20px;
     padding: 0 5%;
 }
@@ -188,35 +198,43 @@ body {
 .topic-card {
     background-color: var(--bg_default);
     border: 1px solid var(--lines-color);
-    /* padding: 15px; */
     text-align: left;
     border-radius: 10px;
-    text-decoration: none;  
-    color: inherit;         
-    display: block;    
-    transition: transform 0.2s;  
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.2s;
 }
 
 .topic-card:hover {
-    transform: scale(1.05);  
+    transform: scale(1.05);
 }
 
 .topic-card img {
     width: 100%;
-    height: auto;
+    height: 150px;
     object-fit: cover;
-    border-top-left-radius: 10px; 
+    border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+}
+
+.topic-card h5 {
+    padding-left: 15px;
+    font-size: 12px;
+    font-weight: 600;
 }
 
 .topic-card h4 {
     padding-left: 15px;
-    margin: 10px 0;
-    margin-bottom: 25px;
+    line-height: 25px;
+    margin-bottom: 15px;
 }
 
-.topic-card p{
+.topic-card p {
     padding-left: 15px;
+    margin: 12px 0;
+    font-weight: 200;
+    font-size: 15px;
 }
 
 .topic-card .rating {
@@ -232,17 +250,17 @@ body {
     align-items: center;
     padding-top: 20px;
     padding-bottom: 20px;
-    margin-top: auto; 
+    margin-top: auto;
     width: 100%;
-  }
-  
-  .footer-content{
+}
+
+.footer-content {
     display: flex;
     align-items: center;
     gap: 5px;
     color: var(--body-text);
     font-weight: 300;
-  }
+}
 
 
 @media (max-width: 768px) {
@@ -252,13 +270,19 @@ body {
 
     .search-section {
         flex-direction: column;
-        width: 95%;
+        width: 80%;
+        align-items: flex-start;
     }
 
     .filter-sort {
         margin-top: 10px;
-        justify-content: space-between;
-        width: 100%;
+        justify-content: flex-start;
+    }
+    .sort-box, .filter-box {
+        margin-left: 0;
+        margin-right: 10px;
+        padding-left: 0;
+        border-left: none; 
     }
 }
 
